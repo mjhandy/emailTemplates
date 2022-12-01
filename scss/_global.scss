@@ -1,0 +1,15 @@
+table{
+  border-spacing: 0;
+  border-color: none;
+  &#outer{
+    width: 100%;
+    padding: 0;
+  }
+  &#inner{
+    width: 100%;
+    @include media-breakpoint-up(lg) { 
+      width: 600px;
+     }
+  }
+
+}

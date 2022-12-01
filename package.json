@@ -1,0 +1,31 @@
+{
+  "name": "email-html-tempaltes",
+  "version": "0.0.1",
+  "description": "HTMl Email Templates using SCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjhandy/emailTemplates.git"
+  },
+  "keywords": [
+    "email",
+    "html",
+    "scss"
+  ],
+  "author": "Mark J. Handy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjhandy/emailTemplates/issues"
+  },
+  "homepage": "https://github.com/mjhandy/emailTemplates#readme",
+  "devDependencies": {
+    "bootstrap": "^5.2.3",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-includes": "^1.1.0",
+    "load-grunt-tasks": "^5.1.0"
+  }
+}

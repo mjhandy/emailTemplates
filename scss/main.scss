@@ -1,0 +1,19 @@
+// Functions first
+@import "../node_modules/bootstrap/scss/functions";
+
+@import "variables";
+
+// Required Bootstrap imports
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+@import 'mixins/mixins';
+
+
+
+
+@import "global";
+
+
+@import "header";
+@import "footer";
