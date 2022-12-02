@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         cwd: 'templates',
         src: [
           'css/main.css',
-          '*.html'
+          'email-*.html'
         ],
         dest: 'emails',
         options: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
     watch:{
       sass: {
-        files: ['scss/**/**.scss'],
+        files: ['scss/**/**.scss','templates/*.html'],
         tasks: ['sass:dev', 'includes:build']
       },
     }

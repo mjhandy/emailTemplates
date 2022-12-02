@@ -15,27 +15,19 @@
   <style type="text/css">
     include "main.css"
   </style>
-  <table id="outer" width="100%">
+  <table id="outer" class="table table-outer" width="100%">
     <tr>
       <td>
-        <table id="inner">
+        <table id="inner" class="table table-inner">
           <tr>
             <td>
-              <table id="header">
+              include "header.html"
+              <table id="body" class="table table-inner table-inner-body">
                 <tr>
                   <td></td>
                 </tr>
               </table>
-              <table id="body">
-                <tr>
-                  <td></td>
-                </tr>
-              </table>
-              <table id="footer">
-                <tr>
-                  <td></td>
-                </tr>
-              </table>
+              include "footer.html"
             </td>
           </tr>
         </table>

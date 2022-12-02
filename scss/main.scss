@@ -1,6 +1,7 @@
+/* DO NOT MODIFY */
+
 // Functions first
 @import "../node_modules/bootstrap/scss/functions";
-
 @import "variables";
 
 // Required Bootstrap imports
@@ -11,8 +12,9 @@
 
 
 
-
+@import "typography";
 @import "global";
+
 
 
 @import "header";
