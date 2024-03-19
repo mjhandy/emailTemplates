@@ -1,3 +1,6 @@
+
+const sass = require('node-sass');
+
 module.exports = function (grunt) {
   
   
@@ -9,10 +12,11 @@ module.exports = function (grunt) {
 
     sass: {      
       dev:{
-        options: {                       // Target options
+        options: {                          // Target options
+          implementation: sass,
           style: 'expanded'
         },
-        files: {                         // Dictionary of files
+        files: {                            // Dictionary of files
           'templates/main.css': 'scss/main.scss',       // 'destination': 'source'
         }
       }
