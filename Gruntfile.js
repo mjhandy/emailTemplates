@@ -21,25 +21,72 @@ module.exports = function (grunt) {
         }
       }
     },
-    includes:{
+
+    replace:{
+      sections:{
+        options:{
+          patterns:[
+            {
+              match: 'year',
+              replacement: '2024'
+            }
+          ]
+        },
+        files:[
+          {
+            expand: true,
+            flatten: true,
+            src: [
+              'templates/sections/header.html',
+              'templates/sections/body.html',
+              'templates/sections/footer.html',
+            ],
+            dest: 'templates/build'
+          }
+        ]
+      },
       build:{
-        cwd: 'templates',
-        src: [
-          'css/main.css',
-          'email-*.html'
-        ],
-        dest: 'emails',
-        options: {
-          flatten: true
-        }
-      
+        options:{
+          patterns:[
+            {
+              match: 'mainCSS',
+              replacement: '<%= grunt.file.read("templates/main.css") %>'
+            },
+            {
+              match: 'bodyCSS',
+              replacement: 'background-color:#fff; margin: 0!important; font-size:16px;'
+            },
+            {
+              match: 'header',
+              replacement: '<%= grunt.file.read("templates/build/header.html") %>'
+            },
+            {
+              match: 'body',
+              replacement: '<%= grunt.file.read("templates/build/body.html") %>'
+            },
+            {
+              match: 'footer',
+              replacement: '<%= grunt.file.read("templates/build/footer.html") %>'
+            },            
+          ]
+        },
+        files:[
+          {
+            expand: true,
+            flatten: true,
+            src: ['templates/email-template.html'],
+            dest: 'emails'
+          }          
+        ]
       }
     },
 
+
+
     watch:{
       sass: {
-        files: ['scss/**/**.scss','templates/*.html'],
-        tasks: ['sass:dev', 'includes:build']
+        files: ['scss/**/**.scss','templates/sections/*.html'],
+        tasks: ['sass:dev', 'replace']
       },
     }
     
@@ -50,7 +97,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('dev', [
     'sass:dev',
-    'includes:build',
+    'replace',
     'watch:sass'
   ]);
 

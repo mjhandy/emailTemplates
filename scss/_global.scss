@@ -1,29 +1,50 @@
 // base layout
 
 // some email clients may strip the body tag, but this is needed for those that dont.
-body{
-  margin: 0;
-  padding: 0;
+body {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
   background-color: $white;
 }
-.table{
-  border: 0;
-  border-spacing: 0;
-  border-color: unset;
-  td{
-    padding: 0;
-    margin: 0;
-  }
-  &-outer{
-    width: 100%;
-    padding: 0;
-    background-color: $white;
-  }
-  &-inner{
-    width: 100%;
-    margin: 0 auto;
-    @include media-breakpoint-up(lg) { 
-      width: 600px;
-     }
+
+table{
+  border-collapse: collapse !important;
+  .table {
+    border: 0;
+    border-spacing: 0;
+    border-color: unset;
+  
+    td {
+      padding: 0;
+      margin: 0;
+    }
+  
+    &-outer {
+      width: 100%;
+      padding: 0;
+      background-color: $white;
+    }
+  
+    &-inner {
+      width: 100%;
+      margin: 0 auto;
+  
+      @include media-breakpoint-up(lg) {
+        width: 600px;
+      }
+
+    }
   }  
+}
+
+
+
+img {
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
 }
