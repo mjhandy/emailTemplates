@@ -27,6 +27,10 @@ module.exports = function (grunt) {
         options:{
           patterns:[
             {
+              match: 'tableSectionCSS',
+              replacement: 'width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;'
+            },
+            {
               match: 'year',
               replacement: '2024'
             }
@@ -54,16 +58,25 @@ module.exports = function (grunt) {
             },
             {
               match: 'bodyCSS',
-              replacement: 'background-color:#fff; margin: 0!important; font-size:16px;'
+              replacement: 'background-color:#fff; margin: 0!important; font-size:16px; word-spacing: normal;'
             },
             {
-              match: 'tableCSS',
+              match: 'articleDiv',
+              replacement: 'text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#fff;'
+            },
+            {
+              match: 'tableOuterCSS',
               replacement: 'border-collapse: collapse !important;',
             },
             {
-              match: 'tableTDCSS'
+              match: 'tableInnerCSS',
+              replacement: ''
+            },
+            {
+              match: 'tableTdCSS',
               replacement: 'margin:0; padding:0;'
             },
+
             {
               match: 'header',
               replacement: '<%= grunt.file.read("templates/build/header.html") %>'
@@ -93,7 +106,7 @@ module.exports = function (grunt) {
 
     watch:{
       sass: {
-        files: ['scss/**/**.scss','templates/sections/*.html'],
+        files: ['scss/**/**.scss','templates/sections/*.html', 'templates/email-template.html'],
         tasks: ['sass:dev', 'replace']
       },
     }

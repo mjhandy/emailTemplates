@@ -1,6 +1,7 @@
 
 emails
-node_modules
+node_module
+templates\build
 
 *.css
 *.map

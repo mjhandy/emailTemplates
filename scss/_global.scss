@@ -8,38 +8,9 @@ body {
   width: 100% !important;
   background-color: $white;
 }
-
-table{
-  border-collapse: collapse !important;
-  .table {
-    border: 0;
-    border-spacing: 0;
-    border-color: unset;
-  
-    td {
-      padding: 0;
-      margin: 0;
-    }
-  
-    &-outer {
-      width: 100%;
-      padding: 0;
-      background-color: $white;
-    }
-  
-    &-inner {
-      width: 100%;
-      margin: 0 auto;
-  
-      @include media-breakpoint-up(lg) {
-        width: 600px;
-      }
-
-    }
-  }  
+table, td, div, h1, p {
+  font-family: Arial, sans-serif;
 }
-
-
 
 img {
   border: 0;
