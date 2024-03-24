@@ -58,7 +58,11 @@ module.exports = function (grunt) {
             },
             {
               match: 'tableCSS',
-              replacement: '',
+              replacement: 'border-collapse: collapse !important;',
+            },
+            {
+              match: 'tableTDCSS'
+              replacement: 'margin:0; padding:0;'
             },
             {
               match: 'header',
