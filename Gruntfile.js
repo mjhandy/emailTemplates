@@ -57,6 +57,10 @@ module.exports = function (grunt) {
               replacement: 'background-color:#fff; margin: 0!important; font-size:16px;'
             },
             {
+              match: 'tableCSS',
+              replacement: '',
+            },
+            {
               match: 'header',
               replacement: '<%= grunt.file.read("templates/build/header.html") %>'
             },
