@@ -17,7 +17,8 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {                            // Dictionary of files
-          'templates/main.css': 'scss/main.scss',       // 'destination': 'source'
+          'templates/main.css': 'scss/main.scss',      // 'destination': 'source'
+          
         }
       }
     },
@@ -28,7 +29,7 @@ module.exports = function (grunt) {
           patterns:[
             {
               match: 'tableSectionCSS',
-              replacement: 'width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;'
+              replacement: '<%= grunt.file.read("scss/tableSectionCSS.css") %>'
             },
             {
               match: 'year',
@@ -62,16 +63,13 @@ module.exports = function (grunt) {
             },
             {
               match: 'articleDiv',
-              replacement: 'text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#fff;'
+              replacement: '<%= grunt.file.read("scss/articleDiv.css") %>'
             },
             {
               match: 'tableOuterCSS',
               replacement: 'border-collapse: collapse !important;',
             },
-            {
-              match: 'tableInnerCSS',
-              replacement: ''
-            },
+
             {
               match: 'tableTdCSS',
               replacement: 'margin:0; padding:0;'
@@ -106,7 +104,12 @@ module.exports = function (grunt) {
 
     watch:{
       sass: {
-        files: ['scss/**/**.scss','templates/sections/*.html', 'templates/email-template.html'],
+        files: [
+          'scss/**/**.scss',
+          'scss/**/**.css',
+          'templates/sections/*.html', 
+          'templates/email-template.html'
+        ],
         tasks: ['sass:dev', 'replace']
       },
     }

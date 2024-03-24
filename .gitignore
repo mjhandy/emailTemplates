@@ -3,5 +3,5 @@ emails
 node_module
 templates\build
 
-*.css
+main.css
 *.map
