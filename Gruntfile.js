@@ -29,7 +29,7 @@ module.exports = function (grunt) {
           patterns:[
             {
               match: 'tableSectionCSS',
-              replacement: '<%= grunt.file.read("scss/tableSectionCSS.css") %>'
+              replacement: '<%= grunt.file.read("scss/css/tableSectionCSS.css") %>'
             },
             {
               match: 'year',
@@ -63,18 +63,12 @@ module.exports = function (grunt) {
             },
             {
               match: 'articleDiv',
-              replacement: '<%= grunt.file.read("scss/articleDiv.css") %>'
+              replacement: '<%= grunt.file.read("scss/css/articleDiv.css") %>'
             },
             {
               match: 'tableOuterCSS',
               replacement: 'border-collapse: collapse !important;',
             },
-
-            {
-              match: 'tableTdCSS',
-              replacement: 'margin:0; padding:0;'
-            },
-
             {
               match: 'header',
               replacement: '<%= grunt.file.read("templates/build/header.html") %>'
