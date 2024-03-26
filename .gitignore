@@ -1,6 +1,6 @@
 
 emails
-node_module
+node_modules
 templates\build
 
 main.css
