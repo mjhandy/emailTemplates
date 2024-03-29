@@ -1,5 +1,7 @@
 
 const sass = require('node-sass');
+const d = new Date();
+let year = d.getFullYear();
 
 module.exports = function (grunt) {
   
@@ -17,8 +19,7 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {                            // Dictionary of files
-          'templates/main.css': 'scss/main.scss',      // 'destination': 'source'
-          
+          'templates/main.css': 'scss/main.scss'
         }
       }
     },
@@ -26,14 +27,18 @@ module.exports = function (grunt) {
     replace:{
       sections:{
         options:{
-          patterns:[
+          patterns:[            
             {
               match: 'tableSectionCSS',
               replacement: '<%= grunt.file.read("scss/css/tableSectionCSS.css") %>'
             },
             {
+              match: 'tableSectionTdCSS',
+              replacement: '<%= grunt.file.read("scss/css/tableSectionTdCSS.css") %>'
+            },            
+            {
               match: 'year',
-              replacement: '2024'
+              replacement: year
             }
           ]
         },
@@ -67,7 +72,7 @@ module.exports = function (grunt) {
             },
             {
               match: 'tableOuterCSS',
-              replacement: 'border-collapse: collapse !important;',
+              replacement: 'border-collapse: collapse !important; background-color: #fff !important;',
             },
             {
               match: 'header',
