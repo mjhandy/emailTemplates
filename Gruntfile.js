@@ -39,9 +39,7 @@ module.exports = function (grunt) {
             expand: true,
             flatten: true,
             src: [
-              'templates/sections/header.html',
-              'templates/sections/body.html',
-              'templates/sections/footer.html',
+              'templates/sections/*.html'
             ],
             dest: 'templates/build'
           }
@@ -67,9 +65,13 @@ module.exports = function (grunt) {
               replacement: '<%= grunt.file.read("templates/build/header.html") %>'
             },
             {
-              match: 'body',
-              replacement: '<%= grunt.file.read("templates/build/body.html") %>'
+              match: 'body-sct',
+              replacement: '<%= grunt.file.read("templates/build/body-singleColumnText.html") %>'
             },
+            {
+              match: 'body-dct',
+              replacement: '<%= grunt.file.read("templates/build/body-dualColumnText.html") %>'
+            },            
             {
               match: 'footer',
               replacement: '<%= grunt.file.read("templates/build/footer.html") %>'
@@ -80,7 +82,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             flatten: true,
-            src: ['templates/email-template.html'],
+            src: ['templates/framework/*.html'],
             dest: 'emails'
           }          
         ]
