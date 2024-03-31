@@ -27,15 +27,7 @@ module.exports = function (grunt) {
     replace:{
       sections:{
         options:{
-          patterns:[            
-            {
-              match: 'tableSectionCSS',
-              replacement: '<%= grunt.file.read("scss/css/tableSectionCSS.css") %>'
-            },
-            {
-              match: 'tableSectionTdCSS',
-              replacement: '<%= grunt.file.read("scss/css/tableSectionTdCSS.css") %>'
-            },            
+          patterns:[ 
             {
               match: 'year',
               replacement: year
@@ -64,15 +56,11 @@ module.exports = function (grunt) {
             },
             {
               match: 'bodyCSS',
-              replacement: 'background-color:#fff; margin: 0!important; font-size:16px; word-spacing: normal;'
+              replacement: '<%= grunt.file.read("scss/css/bodyCSS.css") %>'
             },
             {
               match: 'articleDiv',
               replacement: '<%= grunt.file.read("scss/css/articleDiv.css") %>'
-            },
-            {
-              match: 'tableOuterCSS',
-              replacement: 'border-collapse: collapse !important; background-color: #fff !important;',
             },
             {
               match: 'header',

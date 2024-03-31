@@ -1,4 +1,9 @@
-text-size-adjust:100%;
--webkit-text-size-adjust:100%;
--ms-text-size-adjust:100%;
-background-color:#fff;
+background-color: white;
+color: #2b2b2b;
+font-family:  Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji','Segoe UI Symbol';
+font-size: 18px;
+font-weight: 400;
+line-height: 28px;
+margin: 0 auto;
+max-width: 600px;
+padding: 20px;
